@@ -103,5 +103,13 @@ function showCongratulations() {
     message.textContent = "Congratulations! You found all the connections!";
 }
 
+// Reset the game
+function resetGame() {
+    location.reload(); // Reload the page to reset the game
+}
+
 // Initial render of the grid
 renderWordGrid();
+
+// Add event listener for reset button
+document.getElementById('reset-button').addEventListener('click', resetGame);
