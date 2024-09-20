@@ -19,6 +19,8 @@ let groupColors = ['correct-group-1', 'correct-group-2', 'correct-group-3', 'cor
 const wordGrid = document.getElementById('word-grid');
 const message = document.getElementById('message');
 const submitButton = document.getElementById('submit-btn');
+const resetButton = document.getElementById('reset-button');
+const backToMenuButton = document.getElementById('back-to-menu-btn');
 
 // Render the initial grid of words
 function renderWordGrid() {
@@ -107,6 +109,9 @@ function reshuffleRemainingWords() {
 // Show congratulations message
 function showCongratulations() {
     message.textContent = "Congratulations! You found all the connections!";
+    submitButton.style.display = 'none'; // Hide the submit button
+    resetButton.style.display = 'none';  // Hide the reset button
+    backToMenuButton.style.display = 'block'; // Show the Back to Menu button
 }
 
 // Reset the game
@@ -127,7 +132,12 @@ function handleSubmit() {
 renderWordGrid();
 
 // Add event listener for reset button
-document.getElementById('reset-button').addEventListener('click', resetGame);
+resetButton.addEventListener('click', resetGame);
 
 // Add event listener for submit button
 submitButton.addEventListener('click', handleSubmit);
+
+// Add event listener for Back to Menu button
+backToMenuButton.addEventListener('click', () => {
+    window.location.href = 'index.html'; // Change 'index.html' to your landing page
+});

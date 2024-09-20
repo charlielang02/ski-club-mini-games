@@ -59,17 +59,34 @@
                 grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
             }
         }
+
+        #back-to-menu-btn {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center; /* Center text */
+        }
+
+        .centered {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically if needed */
+            height: 100%; /* Ensure it takes the full height for vertical centering */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Connections Game - Ski Club Edition</h1>
-    </header>
+    <h1>Connections Game - Ski Club Edition</h1>
     <div class="grid" id="word-grid"></div>
-    <button id="submit-btn" aria-label="Submit your selected words">Submit</button>
-    <button id="reset-button" aria-label="Reset the game">Reset Game</button>
+    <div class="button-container centered"> <!-- Centering wrapper -->
+        <button id="submit-btn">Submit</button>
+        <button id="reset-button">Reset</button>
+        <button id="back-to-menu-btn">Back to Menu</button> <!-- Added button -->
+    </div>
     <div id="message"></div>
-    
+
     <script src="js/connections.js"></script>
 </body>
 </html>
