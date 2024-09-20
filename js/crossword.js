@@ -19,17 +19,18 @@ const numberLocations = [
 ];
 
 const acrossClues = [
-    "1 Across: A small stream",
-    "2 Across: To travel on water",
-    "3 Across: A bird known for its ability to fly",
-    "4 Across: A type of beverage made from fermented grains",
-    "5 Across: A type of corrosion",
+    "1 Across: Wide open Trees full of dreamy powder",
+    "2 Across: To ____ a Snowboard",
+    "3 Across: Relating to Birds",
+    "4 Across: UofC Ski and Board Club's Fave Beverage",
+    "5 Across: What you might find on your edges after lack of care",
 ];
 
 const downClues = [
-    "2 Down: The second letter in the alphabet",
-    "3 Down: To come into contact with water",
-    "4 Down: A common noun referring to a growth or increase",
+    "1 Down: A type of trick",
+    "2 Down: What UofC Ski and Board Club members love to ruin",
+    "3 Down: To bid Farewell",
+    "4 Down: 'Don't worry ____'(plural)",
 ];
 
 
