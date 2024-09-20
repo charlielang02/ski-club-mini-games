@@ -18,6 +18,7 @@ let groupColors = ['correct-group-1', 'correct-group-2', 'correct-group-3', 'cor
 // Elements for displaying the game
 const wordGrid = document.getElementById('word-grid');
 const message = document.getElementById('message');
+const submitButton = document.getElementById('submit-btn');
 
 // Render the initial grid of words
 function renderWordGrid() {
@@ -43,8 +44,10 @@ function selectWord(word, wordBox) {
     wordBox.classList.add('selected');
     selectedWords.push({ word, element: wordBox });
 
-    if (selectedWords.length === 4) {
-        checkGroup();
+    // Automatically limit selection to 4 words
+    if (selectedWords.length > 4) {
+        const lastSelected = selectedWords.pop();
+        lastSelected.element.classList.remove('selected');
     }
 }
 
@@ -108,8 +111,20 @@ function resetGame() {
     location.reload(); // Reload the page to reset the game
 }
 
+// Handle submit button click
+function handleSubmit() {
+    if (selectedWords.length === 4) {
+        checkGroup(); // Only check if exactly 4 words are selected
+    } else {
+        message.textContent = "Please select exactly 4 words.";
+    }
+}
+
 // Initial render of the grid
 renderWordGrid();
 
 // Add event listener for reset button
 document.getElementById('reset-button').addEventListener('click', resetGame);
+
+// Add event listener for submit button
+submitButton.addEventListener('click', handleSubmit);
