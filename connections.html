@@ -32,20 +32,33 @@
             transition: background-color 0.3s;
         }
         .selected {
-            background-color: yellow;
+            background-color: #555; /* Dark grey for selected words */
+            color: white;
         }
-        .correct {
-            background-color: lightgreen;
+        .correct-group-1 {
+            background-color: yellow; /* First group: Yellow */
+        }
+        .correct-group-2 {
+            background-color: lightgreen; /* Second group: Green */
+        }
+        .correct-group-3 {
+            background-color: lightblue; /* Third group: Blue */
+        }
+        .correct-group-4 {
+            background-color: lightpurple; /* Fourth group: Purple */
+            background-color: #d5a6bd; /* Hex for light purple */
         }
         #message {
             margin-top: 20px;
             font-size: 20px;
         }
     </style>
+    
 </head>
 <body>
     <h1>Connections Game - Ski Club Edition</h1>
     <div class="grid" id="word-grid"></div>
+    <button id="submit-btn">Submit</button>
     <div id="message"></div>
 
     <script src="js/connections.js"></script>

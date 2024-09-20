@@ -13,6 +13,7 @@ let shuffledWords = shuffleArray(words);
 // Track selected words and correct groups
 let selectedWords = [];
 let correctGroups = [];
+let groupColors = ['correct-group-1', 'correct-group-2', 'correct-group-3', 'correct-group-4'];
 
 // Elements for displaying the game
 const wordGrid = document.getElementById('word-grid');
@@ -79,9 +80,11 @@ function checkGroup() {
 function moveGroupToTop(group) {
     const topDiv = document.createElement('div');
     topDiv.classList.add('grid');
+    const groupColorClass = groupColors[correctGroups.length]; // Assign unique color class to the group
+
     group.forEach(word => {
         const wordBox = document.createElement('div');
-        wordBox.classList.add('word-box', 'correct');
+        wordBox.classList.add('word-box', 'correct', groupColorClass);
         wordBox.textContent = word;
         topDiv.appendChild(wordBox);
     });
