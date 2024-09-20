@@ -39,15 +39,18 @@ function shuffleArray(array) {
 
 // Select a word
 function selectWord(word, wordBox) {
-    if (wordBox.classList.contains('selected') || wordBox.classList.contains('correct')) return;
+    if (wordBox.classList.contains('correct')) return; // Do nothing if it's already correct
 
-    wordBox.classList.add('selected');
-    selectedWords.push({ word, element: wordBox });
-
-    // Automatically limit selection to 4 words
-    if (selectedWords.length > 4) {
-        const lastSelected = selectedWords.pop();
-        lastSelected.element.classList.remove('selected');
+    if (wordBox.classList.contains('selected')) {
+        // Unselect the word if it's already selected
+        wordBox.classList.remove('selected');
+        selectedWords = selectedWords.filter(item => item.word !== word);
+    } else {
+        // Select the word if it's not selected
+        if (selectedWords.length < 4) {
+            wordBox.classList.add('selected');
+            selectedWords.push({ word, element: wordBox });
+        }
     }
 }
 
