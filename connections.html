@@ -32,23 +32,23 @@
             transition: background-color 0.3s;
         }
         .word-box:hover {
-            background-color: #ccc; /* Light grey on hover */
+            background-color: #ccc;
         }
         .selected {
-            background-color: #555; /* Dark grey for selected words */
+            background-color: #555;
             color: white;
         }
         .correct-group-1 {
-            background-color: yellow; /* First group: Yellow */
+            background-color: yellow;
         }
         .correct-group-2 {
-            background-color: lightgreen; /* Second group: Green */
+            background-color: lightgreen;
         }
         .correct-group-3 {
-            background-color: lightblue; /* Third group: Blue */
+            background-color: lightblue;
         }
         .correct-group-4 {
-            background-color: #d5a6bd; /* Light purple */
+            background-color: #d5a6bd;
         }
         #message {
             margin-top: 20px;
@@ -56,34 +56,34 @@
         }
         @media (max-width: 600px) {
             .grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         #back-to-menu-btn {
-            display: none; /* Hidden by default */
+            display: none;
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            text-align: center; /* Center text */
+            text-align: center;
         }
 
         .centered {
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically if needed */
-            height: 100%; /* Ensure it takes the full height for vertical centering */
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
     </style>
 </head>
 <body>
     <h1>Connections Game - Ski Club Edition</h1>
     <div class="grid" id="word-grid"></div>
-    <div class="button-container centered"> <!-- Centering wrapper -->
+    <div class="button-container centered">
         <button id="submit-btn">Submit</button>
         <button id="reset-button">Reset</button>
-        <button id="back-to-menu-btn">Back to Menu</button> <!-- Added button -->
+        <button id="back-to-menu-btn">Back to Menu</button>
     </div>
     <div id="message"></div>
 
