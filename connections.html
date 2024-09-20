@@ -3,16 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordle - Ski Club Edition</title>
+    <title>Connections Game - Ski Club Edition</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 150px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        .word-box {
+            background-color: #eee;
+            padding: 10px;
+            border: 1px solid #333;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+        .selected {
+            background-color: yellow;
+        }
+        .correct {
+            background-color: lightgreen;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Wordle - Ski Club Edition</h1>
-    <div id="wordle-board"></div>
-    <input type="text" id="wordle-input" maxlength="5" placeholder="Enter your guess">
-    <button id="wordle-submit">Submit</button>
-    <button onclick="window.location.href='index.html'">Back to Menu</button>
+    <h1>Connections Game - Ski Club Edition</h1>
+    <div class="grid" id="word-grid"></div>
+    <div id="message"></div>
 
-    <script src="js/wordle.js"></script>
+    <script src="js/connections.js"></script>
 </body>
 </html>
