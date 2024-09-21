@@ -6,8 +6,7 @@ This project showcases a set of interactive web-based games inspired by **The Ne
 
 1. **Wordle**: Guess the 5-letter ski or snowboard-related word.
 2. **Connections**: Group ski and snowboard terms into related categories.
-3. **Mini Crossword**: Solve a crossword puzzle with ski and university-themed clues.
-4. **Strands**: Connect related ski/snowboard words by dragging and dropping.
+3. **Mini Crossword**: Solve a crossword puzzle with ski and board themed clues.
 
 ## Installation and Setup
 
