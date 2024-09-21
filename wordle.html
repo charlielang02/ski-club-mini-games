@@ -5,13 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordle - Ski Club Edition</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .box {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #333;
+            text-align: center;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .correct {
+            background-color: green;
+            color: white;
+        }
+        .wrong-position {
+            background-color: yellow;
+            color: black;
+        }
+        .incorrect {
+            background-color: gray;
+            color: white;
+        }
+        #result {
+            display: none; /* Hide the result section initially */
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Wordle - Ski Club Edition</h1>
     <div id="wordle-board"></div>
-    <input type="text" id="wordle-input" maxlength="5" placeholder="Enter your guess">
-    <button id="wordle-submit">Submit</button>
-    <button onclick="window.location.href='index.html'">Back to Menu</button>
+    <div id="input-row" class="row">
+        <input type="text" id="wordle-input" maxlength="5" placeholder="Enter your guess" autofocus>
+    </div>
+    <div id="result">
+        <h2 id="result-message"></h2>
+        <h3>Your guesses:</h3>
+        <div id="guesses-list"></div>
+        <button onclick="window.location.href='index.html'">Back to Menu</button>
+    </div>
 
     <script src="js/wordle.js"></script>
 </body>
