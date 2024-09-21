@@ -1,8 +1,15 @@
 const wordGroups = {
-    ski: ["Ski", "Skirt", "Room", "Keg"],
-    snowboard: ["Beer", "Hot Chocolate", "Hot Tub", "Poutine"],
-    university: ["Lodge", "Gondola", "Chair", "Bar"],
-    drinking: ["Base", "Core", "Edge", "Topsheet"]
+    powder: ["Ski", "Skirt", "Room", "Keg"],
+    apres: ["Beer", "Hot Chocolate", "Hot Tub", "Poutine"],
+    drinking: ["Lodge", "Gondola", "Chair", "Bar"],
+    ski_parts: ["Base", "Core", "Edge", "Topsheet"]
+};
+
+const wordCategories = {
+    powder: ["Words That Follow Powder"],
+    apres: ["Apres Ski"],
+    drinking: ["Where UofC Ski and Board Members Might Drink"],
+    ski_parts: ["Parts of a Ski"]
 };
 
 let words = Object.values(wordGroups).flat();
@@ -57,18 +64,20 @@ function selectWord(word, wordBox) {
 
 function checkGroup() {
     const selectedWordTexts = selectedWords.map(item => item.word);
-
     let matchedGroup = null;
+    let matchedGroupName = null;
+
     for (const groupName in wordGroups) {
         const group = wordGroups[groupName];
         if (group.every(word => selectedWordTexts.includes(word))) {
             matchedGroup = group;
+            matchedGroupName = groupName;
             break;
         }
     }
 
     if (matchedGroup) {
-        moveGroupToTop(matchedGroup);
+        moveGroupToTop(matchedGroup, matchedGroupName);
         correctGroups.push(matchedGroup);
         reshuffleRemainingWords();
     } else {
@@ -90,18 +99,31 @@ function checkGroup() {
     }
 }
 
-function moveGroupToTop(group) {
+function moveGroupToTop(group, groupName) {
     const topDiv = document.createElement('div');
-    topDiv.classList.add('grid');
+    topDiv.classList.add('group-container');
+
+    const categoryDiv = document.createElement('div');
+    categoryDiv.classList.add('category-title');
+    categoryDiv.textContent = wordCategories[groupName][0];
+
+    topDiv.appendChild(categoryDiv);
+
+    const wordsContainer = document.createElement('div');
+    wordsContainer.classList.add('words-container');
+
     const groupColorClass = groupColors[correctGroups.length];
     group.forEach(word => {
         const wordBox = document.createElement('div');
         wordBox.classList.add('word-box', 'correct', groupColorClass);
         wordBox.textContent = word;
-        topDiv.appendChild(wordBox);
+        wordsContainer.appendChild(wordBox);
     });
+
+    topDiv.appendChild(wordsContainer);
     document.body.insertBefore(topDiv, wordGrid);
 }
+
 
 function reshuffleRemainingWords() {
     const remainingWords = words.filter(word => !correctGroups.flat().includes(word));
