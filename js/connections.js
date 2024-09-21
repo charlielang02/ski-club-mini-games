@@ -20,6 +20,7 @@ const message = document.getElementById('message');
 const submitButton = document.getElementById('submit-btn');
 const resetButton = document.getElementById('reset-button');
 const backToMenuButton = document.getElementById('back-to-menu-btn');
+const guessDots = document.getElementById('guess-dots');
 
 function renderWordGrid() {
     wordGrid.innerHTML = '';
@@ -72,6 +73,7 @@ function checkGroup() {
         reshuffleRemainingWords();
     } else {
         remainingGuesses--;
+        updateGuessDots();
         message.textContent = `Incorrect guess! You have ${remainingGuesses} guesses left.`;
 
         if (remainingGuesses === 0) {
@@ -126,6 +128,7 @@ function resetGame() {
 }
 
 function handleSubmit() {
+    message.textContent = "";
     if (selectedWords.length === 4) {
         checkGroup();
     } else {
@@ -133,7 +136,26 @@ function handleSubmit() {
     }
 }
 
+function renderGuessDots() {
+    guessDots.innerHTML = '';
+    for (let i = 0; i < MAX_GUESSES; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        guessDots.appendChild(dot);
+    }
+}
+
+function updateGuessDots() {
+    const dots = guessDots.children;
+    for (let i = 0; i < MAX_GUESSES; i++) {
+        if (i >= remainingGuesses) {
+            dots[i].classList.add('used');
+        }
+    }
+}
+
 renderWordGrid();
+renderGuessDots();
 
 resetButton.addEventListener('click', resetGame);
 submitButton.addEventListener('click', handleSubmit);
