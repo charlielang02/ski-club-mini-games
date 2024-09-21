@@ -12,6 +12,9 @@ let selectedWords = [];
 let correctGroups = [];
 let groupColors = ['correct-group-1', 'correct-group-2', 'correct-group-3', 'correct-group-4'];
 
+const MAX_GUESSES = 4;
+let remainingGuesses = MAX_GUESSES;
+
 const wordGrid = document.getElementById('word-grid');
 const message = document.getElementById('message');
 const submitButton = document.getElementById('submit-btn');
@@ -30,7 +33,11 @@ function renderWordGrid() {
 }
 
 function shuffleArray(array) {
-    return array.sort(() => Math.random() - 0.5);
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
 function selectWord(word, wordBox) {
@@ -64,7 +71,14 @@ function checkGroup() {
         correctGroups.push(matchedGroup);
         reshuffleRemainingWords();
     } else {
-        selectedWords.forEach(item => item.element.classList.remove('selected'));
+        remainingGuesses--;
+        message.textContent = `Incorrect guess! You have ${remainingGuesses} guesses left.`;
+
+        if (remainingGuesses === 0) {
+            showFailMessage();
+        } else {
+            selectedWords.forEach(item => item.element.classList.remove('selected'));
+        }
     }
 
     selectedWords = [];
@@ -100,6 +114,13 @@ function showCongratulations() {
     backToMenuButton.style.display = 'block';
 }
 
+function showFailMessage() {
+    message.textContent = "Game Over! You've run out of guesses.";
+    submitButton.style.display = 'none';
+    resetButton.style.display = 'none';
+    backToMenuButton.style.display = 'block';
+}
+
 function resetGame() {
     location.reload();
 }
@@ -115,9 +136,7 @@ function handleSubmit() {
 renderWordGrid();
 
 resetButton.addEventListener('click', resetGame);
-
 submitButton.addEventListener('click', handleSubmit);
-
 backToMenuButton.addEventListener('click', () => {
     window.location.href = 'index.html';
 });
