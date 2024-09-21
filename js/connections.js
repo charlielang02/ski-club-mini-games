@@ -1,8 +1,8 @@
 const wordGroups = {
-    ski: ["Ski", "Snow", "Powder", "Pole"],
-    snowboard: ["Board", "Stomp", "Bind", "Terrain"],
-    university: ["Dorm", "Lecture", "Grade", "Degree"],
-    drinking: ["Beer", "Brew", "Shot", "Keg"]
+    ski: ["Ski", "Skirt", "Room", "Keg"],
+    snowboard: ["Beer", "Hot Chocolate", "Hot Tub", "Poutine"],
+    university: ["Lodge", "Gondola", "Chair", "Bar"],
+    drinking: ["Base", "Core", "Edge", "Topsheet"]
 };
 
 let words = Object.values(wordGroups).flat();
