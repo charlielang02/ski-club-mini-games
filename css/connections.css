@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    color: #333;
+}
+
+h2 {
+    font-size: 28px;
+    color: #007BFF;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#wordle-board, #connections-board, #strands-board, #crossword-board {
+    display: grid;
+    margin: 20px auto;
+    grid-gap: 10px;
+}
+
+#wordle-input, #wordle-submit, #connections-submit, #strands-submit {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    width: 150px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#crossword-grid {
+    grid-template-columns: repeat(5, 40px);
+    grid-template-rows: repeat(5, 40px);
+    gap: 5px;
+}
+
+.crossword-cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+}
