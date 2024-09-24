@@ -1,4 +1,4 @@
-const words = ["SKIER", "BOARD", "CHAIR", "LIFTY", "LODGE", "TRAIL", "LOUISE", "GLOVE", "SNOWY", "SLOPE", "SKIIS", "FROST", "CHILL", "GLADE", "PISTE", "SHRED", "GRABS", "CARVE", "JUMPS", "TRICK"];
+const words = ["SKIER", "BOARD", "CHAIR", "LIFTY", "LODGE", "TRAIL", "GLOVE", "SNOWY", "SLOPE", "FROST", "CHILL", "GLADE", "PISTE", "SHRED", "GRABS", "CARVE", "JUMPS", "TRICK"];
 const wordleAnswer = words[Math.floor(Math.random() * words.length)];
 let wordleGuesses = 0;
 let guesses = [];

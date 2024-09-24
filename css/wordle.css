@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url('../assets/chuck_skiin2.JPG');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    color: white;
+}
+
+
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h2, h3 {
+    color: #ff4757;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#wordle-board {
+    margin-top: 20px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #333;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0 5px;
+    line-height: 50px;
+    border-radius: 8px;
+}
+
+.correct {
+    background-color: #28a745;
+}
+
+.wrong-position {
+    background-color: #ffc107;
+    color: black;
+}
+
+.incorrect {
+    background-color: #6c757d;
+}
+
+#wordle-input {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+
+#result {
+    display: none;
+}
+
+.back-button {
+    padding: 12px 20px;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #e03e47;
+}
+
+@media (min-width: 768px) {
+    .box {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 26px;
+    }
+    
+    #wordle-input {
+        font-size: 20px;
+        max-width: 300px;
+    }
+    
+    .back-button {
+        font-size: 1.4rem;
+    }
+}
+#wordle-input {
+    text-transform: uppercase;
+}

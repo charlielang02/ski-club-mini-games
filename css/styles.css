@@ -1,18 +1,25 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-image: url('../assets/SaBGroup.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: white;
 }
 
 h1 {
-    font-size: 36px;
-    margin-top: 20px;
-    color: #333;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 h2 {
-    font-size: 28px;
-    color: #007BFF;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
 ul {
@@ -73,4 +80,58 @@ button:hover {
     text-align: center;
     line-height: 40px;
     font-size: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff6b6b, #ff4757);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(255, 71, 87, 0.3);
+}
+
+.game-button:hover {
+    background: linear-gradient(45deg, #ff4757, #ff6b6b);
+    box-shadow: 0 12px 24px rgba(255, 71, 87, 0.6);
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .button-container {
+        flex-direction: row;
+    }
+
+    .game-button {
+        font-size: 1.4rem;
+    }
 }

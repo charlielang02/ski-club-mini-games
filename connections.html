@@ -1,126 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connections Game - Ski Club Edition</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            margin-top: 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 150px);
-            grid-gap: 10px;
-            justify-content: center;
-            margin: 20px auto;
-        }
-        .word-box {
-            background-color: #eee;
-            padding: 10px;
-            border: 1px solid #333;
-            cursor: pointer;
-            font-size: 18px;
-            text-align: center;
-            user-select: none;
-            transition: background-color 0.3s;
-        }
-        .word-box:hover {
-            background-color: #ccc;
-        }
-        .selected {
-            background-color: #555;
-            color: white;
-            border: 2px solid #fff;
-        }
-        .correct-group-1 {
-            background-color: yellow;
-        }
-        .correct-group-2 {
-            background-color: lightgreen;
-        }
-        .correct-group-3 {
-            background-color: lightblue;
-        }
-        .correct-group-4 {
-            background-color: #d5a6bd;
-        }
-        #guess-dots {
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-        }
-        .dot {
-            height: 20px;
-            width: 20px;
-            margin: 0 5px;
-            background-color: green;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .dot.used {
-            background-color: red;
-        }
-        #message {
-            margin-top: 20px;
-            font-size: 20px;
-        }
-        @media (max-width: 600px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        #back-to-menu-btn {
-            display: none;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-        }
-        .centered {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-        .group-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .category-title {
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        .words-container {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css/connections.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Connections Game - Ski Club Edition</h1>
-    <div class="grid" id="word-grid"></div>
+    <div class="container">
+        <h1>Connections Game - Ski Club Edition</h1>
 
-    <div id="guess-dots"></div>
+        <div class="grid" id="word-grid"></div>
 
-    <div class="button-container centered">
-        <button id="submit-btn" role="button">Submit</button>
-        <button id="reset-button" role="button">Reset</button>
-        <button id="back-to-menu-btn" role="button">Back to Menu</button>
+        <div id="guess-dots"></div>
+
+        <div class="button-container">
+            <button id="submit-btn" class="game-button" role="button">Submit</button>
+            <button id="reset-button" class="game-button" role="button">Reset</button>
+            <button id="back-to-menu-btn" class="game-button" role="button">Back to Menu</button>
+        </div>
+
+        <div id="message"></div>
     </div>
-    <div id="message"></div>
 
     <script src="js/connections.js"></script>
 </body>
+
 </html>

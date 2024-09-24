@@ -6,16 +6,15 @@ const crosswordData = [
     [null, "R", "U", "S", "T"]
 ];
 
-// Hardcoded number locations for clues
 const numberLocations = [
-    { row: 0, col: 0, number: 1 },  // "G" - 1 across and 1 down
-    { row: 1, col: 0, number: 2 },  // "R" - 2 across (start of row 2)
-    { row: 2, col: 0, number: 3 },  // "A" - 3 across (start of row 3)
-    { row: 3, col: 0, number: 4 },  // "B" - 4 across (start of row 4)
-    { row: 4, col: 1, number: 5 },  // "R" - 5 across (start of row 5)
-    { row: 0, col: 1, number: 2 },  // "L" - 2 down (second column)
-    { row: 0, col: 2, number: 3 },  // "A" - 3 down (third column)
-    { row: 0, col: 3, number: 4 },  // "D" - 4 down (fourth column)
+    { row: 0, col: 0, number: 1 },
+    { row: 1, col: 0, number: 2 },
+    { row: 2, col: 0, number: 3 },
+    { row: 3, col: 0, number: 4 },
+    { row: 4, col: 1, number: 5 },
+    { row: 0, col: 1, number: 2 },
+    { row: 0, col: 2, number: 3 },
+    { row: 0, col: 3, number: 4 },
 ];
 
 const acrossClues = [
@@ -35,9 +34,9 @@ const downClues = [
 
 
 
-let isAcross = true;     // Tracks if the current focus is on an across word or a down word
-let currentCell = null;  // Tracks the current focused cell
-let focusedWord = [];    // Tracks the current word being worked on
+let isAcross = true;
+let currentCell = null;
+let focusedWord = [];
 
 const crosswordContainer = document.getElementById('crossword');
 const messageContainer = document.getElementById('message');
@@ -60,9 +59,9 @@ function highlightWord(wordCells, currentCell) {
     clearHighlights();
     wordCells.forEach(({ row, col }) => {
         const input = document.querySelector(`input[data-row="${row}"][data-col="${col}"]`);
-        input.parentElement.classList.add('highlight');  // Highlight the word in blue
+        input.parentElement.classList.add('highlight');
         if (row === currentCell.row && col === currentCell.col) {
-            input.parentElement.classList.add('active-cell');  // Highlight active cell in yellow
+            input.parentElement.classList.add('active-cell');
         }
     });
 }
@@ -190,13 +189,13 @@ function displayClues() {
 
     acrossClues.forEach(clue => {
         const clueElement = document.createElement('div');
-        clueElement.innerHTML = clue.replace(/(\d+)/, '<strong>$1</strong>'); // Make the clue number bold
+        clueElement.innerHTML = clue.replace(/(\d+)/, '<strong>$1</strong>');
         acrossContainer.appendChild(clueElement);
     });
 
     downClues.forEach(clue => {
         const clueElement = document.createElement('div');
-        clueElement.innerHTML = clue.replace(/(\d+)/, '<strong>$1</strong>'); // Make the clue number bold
+        clueElement.innerHTML = clue.replace(/(\d+)/, '<strong>$1</strong>');
         downContainer.appendChild(clueElement);
     });
 }

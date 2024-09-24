@@ -1,6 +1,6 @@
 const wordGroups = {
     powder: ["Ski", "Skirt", "Room", "Keg"],
-    apres: ["Beer", "Hot Chocolate", "Hot Tub", "Poutine"],
+    apres: ["Beer", "Hot Cocoa", "Hot Tub", "Poutine"],
     drinking: ["Lodge", "Gondola", "Chair", "Bar"],
     ski_parts: ["Base", "Core", "Edge", "Topsheet"]
 };
@@ -28,6 +28,7 @@ const submitButton = document.getElementById('submit-btn');
 const resetButton = document.getElementById('reset-button');
 const backToMenuButton = document.getElementById('back-to-menu-btn');
 const guessDots = document.getElementById('guess-dots');
+const container = document.querySelector('.container');
 
 function renderWordGrid() {
     wordGrid.innerHTML = '';
@@ -115,15 +116,15 @@ function moveGroupToTop(group, groupName) {
     const groupColorClass = groupColors[correctGroups.length];
     group.forEach(word => {
         const wordBox = document.createElement('div');
-        wordBox.classList.add('word-box', 'correct', groupColorClass);
+        wordBox.classList.add('word-box', 'correct', groupColorClass); 
         wordBox.textContent = word;
         wordsContainer.appendChild(wordBox);
     });
 
     topDiv.appendChild(wordsContainer);
-    document.body.insertBefore(topDiv, wordGrid);
-}
 
+    container.insertBefore(topDiv, wordGrid);
+}
 
 function reshuffleRemainingWords() {
     const remainingWords = words.filter(word => !correctGroups.flat().includes(word));
