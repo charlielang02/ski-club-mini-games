@@ -1,6 +1,6 @@
 const wordGroups = {
     powder: ["Ski", "Skirt", "Room", "Keg"],
-    apres: ["Beer", "Hot Chocolate", "Hot Tub", "Poutine"],
+    apres: ["Beer", "Hot Cocoa", "Hot Tub", "Poutine"],
     drinking: ["Lodge", "Gondola", "Chair", "Bar"],
     ski_parts: ["Base", "Core", "Edge", "Topsheet"]
 };
@@ -28,6 +28,7 @@ const submitButton = document.getElementById('submit-btn');
 const resetButton = document.getElementById('reset-button');
 const backToMenuButton = document.getElementById('back-to-menu-btn');
 const guessDots = document.getElementById('guess-dots');
+const container = document.querySelector('.container'); // Reference to the container for proper placement
 
 function renderWordGrid() {
     wordGrid.innerHTML = '';
@@ -105,25 +106,26 @@ function moveGroupToTop(group, groupName) {
 
     const categoryDiv = document.createElement('div');
     categoryDiv.classList.add('category-title');
-    categoryDiv.textContent = wordCategories[groupName][0];
+    categoryDiv.textContent = wordCategories[groupName][0]; // Display the group title (e.g., Apres Ski)
 
     topDiv.appendChild(categoryDiv);
 
     const wordsContainer = document.createElement('div');
-    wordsContainer.classList.add('words-container');
+    wordsContainer.classList.add('words-container'); // Flexbox for the words in a row
 
-    const groupColorClass = groupColors[correctGroups.length];
+    const groupColorClass = groupColors[correctGroups.length]; // Assign different color class for each group
     group.forEach(word => {
         const wordBox = document.createElement('div');
-        wordBox.classList.add('word-box', 'correct', groupColorClass);
+        wordBox.classList.add('word-box', 'correct', groupColorClass); // Apply correct and color class
         wordBox.textContent = word;
         wordsContainer.appendChild(wordBox);
     });
 
     topDiv.appendChild(wordsContainer);
-    document.body.insertBefore(topDiv, wordGrid);
-}
 
+    // Insert the group container inside the main container above the word grid
+    container.insertBefore(topDiv, wordGrid);
+}
 
 function reshuffleRemainingWords() {
     const remainingWords = words.filter(word => !correctGroups.flat().includes(word));
