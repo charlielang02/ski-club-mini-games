@@ -28,7 +28,7 @@ const submitButton = document.getElementById('submit-btn');
 const resetButton = document.getElementById('reset-button');
 const backToMenuButton = document.getElementById('back-to-menu-btn');
 const guessDots = document.getElementById('guess-dots');
-const container = document.querySelector('.container'); // Reference to the container for proper placement
+const container = document.querySelector('.container');
 
 function renderWordGrid() {
     wordGrid.innerHTML = '';
@@ -106,24 +106,23 @@ function moveGroupToTop(group, groupName) {
 
     const categoryDiv = document.createElement('div');
     categoryDiv.classList.add('category-title');
-    categoryDiv.textContent = wordCategories[groupName][0]; // Display the group title (e.g., Apres Ski)
+    categoryDiv.textContent = wordCategories[groupName][0];
 
     topDiv.appendChild(categoryDiv);
 
     const wordsContainer = document.createElement('div');
-    wordsContainer.classList.add('words-container'); // Flexbox for the words in a row
+    wordsContainer.classList.add('words-container');
 
-    const groupColorClass = groupColors[correctGroups.length]; // Assign different color class for each group
+    const groupColorClass = groupColors[correctGroups.length];
     group.forEach(word => {
         const wordBox = document.createElement('div');
-        wordBox.classList.add('word-box', 'correct', groupColorClass); // Apply correct and color class
+        wordBox.classList.add('word-box', 'correct', groupColorClass); 
         wordBox.textContent = word;
         wordsContainer.appendChild(wordBox);
     });
 
     topDiv.appendChild(wordsContainer);
 
-    // Insert the group container inside the main container above the word grid
     container.insertBefore(topDiv, wordGrid);
 }
 
