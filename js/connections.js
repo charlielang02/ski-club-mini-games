@@ -1,7 +1,7 @@
 const wordGroups = {
     powder: ["Ski", "Skirt", "Room", "Keg"],
     apres: ["Beer", "Hot Cocoa", "Hot Tub", "Poutine"],
-    drinking: ["Lodge", "Gondola", "Chair", "Bar"],
+    drinking: ["Lodge", "Gondola", "Chairlift", "Bar"],
     ski_parts: ["Base", "Core", "Edge", "Topsheet"]
 };
 

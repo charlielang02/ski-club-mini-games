@@ -29,7 +29,7 @@ const downClues = [
     "1 Down: A type of trick",
     "2 Down: What UofC Ski and Board Club members love to ruin",
     "3 Down: To bid Farewell",
-    "4 Down: 'Don't worry ____'(plural)",
+    "4 Down: Homophone of an animal with antlers(Males are bucks), plural",
 ];
 
 
