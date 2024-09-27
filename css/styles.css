@@ -89,20 +89,21 @@ button:hover {
     font-family: 'Montserrat', sans-serif;
 }
 
-
-
 .container {
     background: rgba(0, 0, 0, 0.5);
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
 }
-
 
 .button-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
 }
 
 .game-button {
@@ -129,9 +130,41 @@ button:hover {
 @media (min-width: 768px) {
     .button-container {
         flex-direction: row;
+        justify-content: center;
     }
 
     .game-button {
         font-size: 1.4rem;
+        padding: 15px 40px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 300px;
+    height: auto;
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        justify-content: flex-start;
+        padding-top: 0px;
+    }
+
+    .logo-container {
+        margin-top: 5px;
+        margin-bottom: 40px;
     }
 }
